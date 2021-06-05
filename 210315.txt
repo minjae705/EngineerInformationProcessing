@@ -1,0 +1,26 @@
+AC
+
+6. 다음 프로그램의 출력결과를 쓰시오.
+
+#include <stdio.h>
+double power(double base, int exp);
+int main()
+{
+    printf("%.2f\n", power(2,3));
+    return 0;
+}
+
+double power(double base, int exp)
+{
+    double result = 1;
+    int n = exp;
+    while(n--) result *= base;
+    return result;
+}
+
+답) 8.00
+
+power(base, exp) base의 exp제곱
+printf함수에서 2의3승인 8을 출력하는데 포맷스트링이 "%.2f" 이므로 8.00을 출력
+
+[출처] [2021년 제1회 기사 실기 출제예상 문제] (6과목) 프로그램밍 언어 활용 - 6 (수제비- IT 커뮤니티 (정보처리기사,빅데이터분석기사 등)) | 작성자 보안쌤
