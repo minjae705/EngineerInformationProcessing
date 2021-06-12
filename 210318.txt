@@ -1,0 +1,23 @@
+AC
+
+9. 다음 프로그램의 출력결과를 쓰시오.
+
+public class Sujebi{   
+    public int add(int a, int b){   // 정수의 합계 계산
+        return a+b;
+    }
+    public double add(double a, double b){   // 소수점 합계 계산
+        return a+b;
+    }   
+    public static void main(String []args){       
+        Sujebi s = new Sujebi();       
+        System.out.print(s.add(5,4) + " ");   // 정수의 합 출력
+        System.out.println(s.add(5.0,4.0));     //소수점 합 출력  
+    }
+}
+
+답) 9 9.0
+
+Sujebi클래스에서 객체를 new연산자를 이용하여 생성하고 멤버 메소드인 add를 호출하여 화면에 출력하는  오버로딩(Overloading)  예제이다.
+
+[출처] [2021년 제1회 기사 실기 출제예상 문제] (6과목) 프로그램밍 언어 활용 - 9 (수제비- IT 커뮤니티 (정보처리기사,빅데이터분석기사 등)) | 작성자 보안쌤
