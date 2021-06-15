@@ -1,0 +1,65 @@
+AC
+
+65. 다음은 링크드 리스트를 이용하여 스택을 구현하는 프로그램이다.  밑줄에 들어갈 키워드를 쓰시오. 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+	int data;                  // 저장 데이터
+	struct node *next;     // 노드의 다음 주소를 저장할 포인터 변수
+}Node; 
+
+void push(Node *head, int data){
+	Node *end = (Node *)malloc(sizeof(Node));   // malloc함수를 이용하여 메모리 할당하여 노드를 하나 생성함
+	end->____(1)_____ = head->next;       // head의 next 값을 end의 end의 next에 대입함
+	end->data = data;      // 매개변수로 전달받은 data를 end의 data에 대입함
+	head->next = end;     //end의 주소값을 head의 next에 대입함
+}
+
+int pop(Node *head){
+	int a;
+	Node *del = head->next;     // 노드를 삭제하기 전 head의 next를 del에 대입함
+	head->next = del->next;      // del의 next를 head의 next에 대입함
+	a = del->data;                   // del의 data를 a에 대입함
+	free( ____(2)_____ );              // free함수를 이용하여 del을 메모리에서 해제하여 노드를 제거함
+	return a;
+}
+
+void print(Node *head){
+	Node *tmp = head->next;       //head의 next 를 tmp에 대입함
+	while(tmp != NULL){              // tmp가 NULL이 아니면 반복을 수행함
+		printf("%d ", tmp->data);    // tmp의 data를 화면에 출력함
+		____(3)_____ = tmp->next;   // tmp의 next를 tmp에 대입함
+	}
+}
+
+int main(int argc, char *argv[]){
+	int r=10;
+	int i=0;
+	
+	Node *head = (Node *)malloc(sizeof(Node));    // head 를 malloc 하여 생성함
+	head->data = 0;              // head의 data에 0을 대입함  
+	head->next = NULL;        // head의 next에 NULL을 대입함
+	
+	for(i=0;i<10;i++){         // i값은 0부터 10보다 작을때까지 1씩 증가하며 반복함
+		push(head, i);         // i값을 스택에 push 함
+	}
+	printf("push data : ");  
+	print(head);     // 스택의 내용을 보여줌
+	
+	printf("\n");
+	
+	r = pop(head);    // 스택에서 데이터를 pop 하여 r에 대입함
+	printf("pop data : %d\n", r);      // pop 한 데이터인 r을 화면에 출력함
+	
+	printf("stack data : ");
+	print(head);     // 스택의 내용을 보여줌
+	
+	return 0;
+}
+[출처] [2021년 제2회 기사 실기 출제예상 문제] (6과목) 프로그램밍 언어 활용 - 65 (수제비- IT 커뮤니티 (정보처리기사,빅데이터분석기사 등)) | 작성자 보안쌤
+
+(1) next
+(2) del
+(3) tmp
